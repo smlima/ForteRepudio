@@ -15,24 +15,36 @@
 
     <ImageView
         android:layout_width="match_parent"
+        android:id="@+id/button"
+        android:background="@drawable/microphone_click"
+        android:onClick="onClickMic2 (MainActivity)"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@+id/hashtag"
+        android:scaleType="center"
+        android:adjustViewBounds="false"/>
+
+    <TextView
+        android:padding="10dp"
+        android:id="@+id/hashtag"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="22sp"
+        android:gravity="center"
+        android:text="#forterepudio"
+        android:textStyle="italic|bold"
+        android:layout_above="@+id/imageView2"/>
+
+    <ImageView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:srcCompat="@mipmap/mixordia_comercial_image"
         android:id="@+id/imageView2"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
         android:scaleType="centerCrop"
+        android:adjustViewBounds="true"
         android:layout_alignParentBottom="true"
-        android:adjustViewBounds="true"/>
-
-    <Button
-        android:text=""
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:id="@+id/button"
-        android:background="@drawable/microphone_click"
-        android:layout_marginTop="28dp"
-        android:onClick="onClickMic2 (MainActivity)"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"/>
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"/>
 
 </RelativeLayout>

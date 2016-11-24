@@ -6,7 +6,6 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 
 public class MainActivity extends AppCompatActivity {
@@ -16,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button viewById = (Button) findViewById(R.id.button);
+        ImageView viewById = (ImageView) findViewById(R.id.button);
 
         viewById.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -32,6 +31,13 @@ public class MainActivity extends AppCompatActivity {
                 onRedirectComercial();
             }
         });
+
+        findViewById(R.id.hashtag).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onRedirectHashtag();
+            }
+        });
     }
 
     public void onClickMic2(View view){
@@ -41,6 +47,14 @@ public class MainActivity extends AppCompatActivity {
 
     public void onRedirectComercial(){
         String url = "http://radiocomercial.iol.pt/videos/5432/praticas-que-repudio-veementemente";
+
+        Intent i = new Intent(Intent.ACTION_VIEW);
+        i.setData(Uri.parse(url));
+        startActivity(i);
+    }
+
+    public void onRedirectHashtag(){
+        String url = "https://www.facebook.com/hashtag/forterepudio";
 
         Intent i = new Intent(Intent.ACTION_VIEW);
         i.setData(Uri.parse(url));
